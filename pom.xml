@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>top.serug.springcloud</groupId>
+  <artifactId>springcloud2020</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <!--统一管理jar包版本-->
+  <properties>
+
+  </properties>
+
+  <!--子模块继承之后，提供作用：锁定版本+子model不用写groupId和version；
+  dependencyManagement只是声明依赖，并不引入jar包，因此子项目需要声明需要用的依赖；
+  只有子项目中国写了该依赖项，并没有指定具体版本才会从父项目中继承该项，病区version和scope都读取父pom的；
+  如果子项目中有声明version，使用子项目的
+  -->
+  <dependencyManagement>
+    <dependencies>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+
+  </build>
+
+</project>
