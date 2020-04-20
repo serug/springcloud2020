@@ -2,31 +2,48 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>top.serug.springcloud</groupId>
-  <artifactId>springcloud2020</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>top.serug.springcloud</groupId>
+    <artifactId>springcloud2020</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <!--统一管理jar包版本-->
-  <properties>
+    <name>springcloud2020</name>
+    <description>springcloud2020 practice</description>
 
-  </properties>
+    <!--统一管理jar包版本-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.16.18</lombok.version>
+        <mysql.version>8.0.17</mysql.version>
+        <druid.version>1.1.16</druid.version>
+        <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
+        <spring.boot.dependencies.version>2.2.2.RELEASE</spring.boot.dependencies.version>
+    </properties>
 
-  <!--子模块继承之后，提供作用：锁定版本+子model不用写groupId和version；
-  dependencyManagement只是声明依赖，并不引入jar包，因此子项目需要声明需要用的依赖；
-  只有子项目中国写了该依赖项，并没有指定具体版本才会从父项目中继承该项，病区version和scope都读取父pom的；
-  如果子项目中有声明version，使用子项目的
-  -->
-  <dependencyManagement>
-    <dependencies>
+    <!--子模块继承之后，提供作用：锁定版本+子model不用写groupId和version；
+    dependencyManagement只是声明依赖，并不引入jar包，因此子项目需要声明需要用的依赖；
+    只有子项目中国写了该依赖项，并没有指定具体版本才会从父项目中继承该项，病区version和scope都读取父pom的；
+    如果子项目中有声明version，使用子项目的
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.dependencies.version}</version>
+            </dependency>
 
-    </dependencies>
-  </dependencyManagement>
+        </dependencies>
+    </dependencyManagement>
 
-  <build>
+    <build>
 
-  </build>
+    </build>
 
 </project>
