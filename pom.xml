@@ -13,6 +13,8 @@
     <description>springcloud2020 practice</description>
 
     <modules>
+        <module>spring-cloud-basic</module>
+        <module>spring-cloud-model</module>
         <module>spring-cloud-payment-8001</module>
     </modules>
 

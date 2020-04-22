@@ -4,16 +4,15 @@ server:
 spring:
   application:
     name: spring-payment-service
+  # DataSource
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://101.37.204.222/sc2020?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sc2020
+    password: 1qaz@WSX#EDC
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
+mybatis:
+  mapper-locations: classpath:mapper/**/*.mapper.xml
+  #type-aliases-package: top.serug.springcloud.entities
 
-#    # DataSource
-#    spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
-#    #spring.datasource.url=jdbc:mysql://localhost:3306/nari?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-#    #spring.datasource.username=root
-#    #spring.datasource.password=dyw199120
-#    spring.datasource.url=jdbc:mysql://106.15.187.237/nr_xmgl?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-#    spring.datasource.username=nr2019
-#    spring.datasource.password=1q2w3e$R%T^Y
-#    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
