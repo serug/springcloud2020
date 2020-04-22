@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.serug.springcloud.payment.dao.PaymentMapper">
+    <resultMap id="BaseResultMap" type="top.serug.payment.Payment">
+
+    </resultMap>
+
+    <insert id="addPayment" parameterType="top.serug.payment.Payment">
+        insert into t_payment (pay_money) values (#{payMoney})
+    </insert>
+
+</mapper>
