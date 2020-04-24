@@ -13,6 +13,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-  mapper-locations: classpath:mapper/**/*.mapper.xml
-  #type-aliases-package: top.serug.springcloud.entities
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  type-aliases-package: top.serug.springcloud.entities
 

@@ -15,6 +15,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Payment {
-    private Integer payId;
+    private long payId;
     private BigDecimal payMoney;
 }

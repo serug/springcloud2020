@@ -1,6 +1,7 @@
 package top.serug.springcloud.payment.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import top.serug.payment.Payment;
 
 /**
  * @Description:
@@ -10,4 +11,13 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PaymentMapper {
 
+    /**
+     * @Description: 新增
+     * @Param: 
+     * @return: 
+     */
+    public long addPayment(Payment bo);
+    
+    
+    
 }
