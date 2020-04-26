@@ -3,6 +3,9 @@ package top.serug.springcloud.payment.dao;
 import org.apache.ibatis.annotations.Mapper;
 import top.serug.payment.Payment;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Description:
  * @Author: serug
@@ -18,6 +21,7 @@ public interface PaymentMapper {
      */
     public long addPayment(Payment bo);
     
-    
+
+    public List<Payment> getPaymentList(Map<String, Object> params);
     
 }

@@ -6,6 +6,9 @@ import top.serug.payment.Payment;
 import top.serug.springcloud.payment.dao.PaymentMapper;
 import top.serug.springcloud.payment.service.IPaymentService;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Description:
  * @Author: serug
@@ -22,4 +25,12 @@ public class PaymentServiceImpl implements IPaymentService {
         long id = paymentMapper.addPayment(bo);
         return bo.getPayId();
     }
+
+    @Override
+    public List<Payment> getPaymentList(Map<String, Object> params) {
+        List<Payment> list = paymentMapper.getPaymentList(params);
+        return list;
+    }
+
+
 }

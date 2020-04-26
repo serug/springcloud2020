@@ -10,5 +10,12 @@
         insert into t_payment (pay_money) values (#{payMoney})
     </insert>
 
+    <select id="getPaymentList" resultMap="BaseResultMap">
+        select
+            t.pay_id,
+            t.pay_money
+        from
+            t_payment t
+    </select>
 
 </mapper>

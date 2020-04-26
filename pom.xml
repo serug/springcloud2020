@@ -15,7 +15,7 @@
     <modules>
         <module>spring-cloud-basic</module>
         <module>spring-cloud-model</module>
-        <module>spring-cloud-payment-8001</module>
+        <module>cloud-provider-payment-8001</module>
     </modules>
 
 
@@ -33,6 +33,7 @@
         <spring.boot.dependencies.version>2.2.2.RELEASE</spring.boot.dependencies.version>
         <spring.cloud.dependencies.version>Hoxton.SR1</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
+        <spring.boot.devtools>2.1.7.RELEASE</spring.boot.devtools>
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子model不用写groupId和version；
@@ -104,12 +105,28 @@
                 <version>${junit.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring.boot.devtools}</version>
+                <scope>runtime</scope>
+                <optional>true</optional>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
 
     <build>
-
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
