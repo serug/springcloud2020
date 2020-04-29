@@ -17,7 +17,7 @@ public class CommonResponse<T> {
 
     private Integer code;
     private String message;
-    private boolean isSuccess;
+    private boolean isSuccessgu;
     private T data;
 
 
@@ -26,9 +26,9 @@ public class CommonResponse<T> {
      * @Param:
      * @return:
      */
-    public CommonResponse(Integer code, String message, boolean isSuccess){
+    public CommonResponse(Integer code, String message, boolean isSuccessgu){
 
-        this(code, message, isSuccess,null);
+        this(code, message, isSuccessgu,null);
     }
 
     /**

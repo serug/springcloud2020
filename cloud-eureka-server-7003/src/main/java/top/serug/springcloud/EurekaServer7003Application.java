@@ -2,18 +2,17 @@ package top.serug.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @Description:
  * @Author: serug
- * @Date: ${DATE}  ${TIME}
+ * @Date: 2020/4/29  14:14
  */
 @SpringBootApplication
-@EnableEurekaClient
-public class PaymentApplication {
-
+@EnableEurekaServer
+public class EurekaServer7003Application {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentApplication.class, args);
+        SpringApplication.run(EurekaServer7003Application.class, args);
     }
 }

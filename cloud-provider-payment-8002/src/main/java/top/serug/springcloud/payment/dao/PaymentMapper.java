@@ -26,4 +26,5 @@ public interface PaymentMapper {
 
     public Payment getPaymentByPayId(Long payId);
 
+
 }

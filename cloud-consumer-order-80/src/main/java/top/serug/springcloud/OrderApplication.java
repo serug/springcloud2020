@@ -7,13 +7,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @Description:
  * @Author: serug
- * @Date: ${DATE}  ${TIME}
+ * @Date: 2020/4/27  10:24
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class PaymentApplication {
+public class OrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PaymentApplication.class, args);
+        SpringApplication.run(OrderApplication.class, args);
     }
 }

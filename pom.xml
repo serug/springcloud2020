@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -16,6 +15,11 @@
         <module>spring-cloud-basic</module>
         <module>spring-cloud-model</module>
         <module>cloud-provider-payment-8001</module>
+        <module>cloud-consumer-order-80</module>
+        <module>cloud-eureka-server-7001</module>
+        <module>cloud-eureka-server-7002</module>
+        <module>cloud-eureka-server-7003</module>
+        <module>cloud-provider-payment-8002</module>
     </modules>
 
 
@@ -33,7 +37,9 @@
         <spring.boot.dependencies.version>2.2.2.RELEASE</spring.boot.dependencies.version>
         <spring.cloud.dependencies.version>Hoxton.SR1</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
-        <spring.boot.devtools>2.1.7.RELEASE</spring.boot.devtools>
+        <spring.boot.devtools.version>2.1.7.RELEASE</spring.boot.devtools.version>
+        <spring.boot.test.version>2.2.0.RELEASE</spring.boot.test.version>
+        <hutool.version>5.1.0</hutool.version>
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子model不用写groupId和version；
@@ -98,6 +104,13 @@
                 <version>${lombok.version}</version>
             </dependency>
 
+            <!-- hutool 工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <!--junit-->
             <dependency>
                 <groupId>junit</groupId>
@@ -105,13 +118,22 @@
                 <version>${junit.version}</version>
             </dependency>
 
+            <!-- 热部署 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
-                <version>${spring.boot.devtools}</version>
+                <version>${spring.boot.devtools.version}</version>
                 <scope>runtime</scope>
                 <optional>true</optional>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.test.version}</version>
+            </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>
