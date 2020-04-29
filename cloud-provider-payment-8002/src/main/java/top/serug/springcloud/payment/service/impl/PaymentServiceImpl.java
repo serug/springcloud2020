@@ -36,6 +36,7 @@ public class PaymentServiceImpl implements IPaymentService {
     public Payment getPaymentByPayId(Long payId) {
         Payment bo = paymentMapper.getPaymentByPayId(payId);
         return bo;
+
     }
 
 
