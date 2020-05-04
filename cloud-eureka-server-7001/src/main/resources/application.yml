@@ -13,3 +13,11 @@ eureka:
     service-url:
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
       defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+#自我保护机制关闭的配置
+#  server:
+#    #是否开启自我保护模式，默认是true，开启的
+#    enable-self-preservation: false
+#    #心跳包的最长未发生的时间，单位毫秒，默认90000（90秒）
+#    eviction-interval-timer-in-ms: 2000
+
