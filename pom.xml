@@ -21,6 +21,10 @@
         <module>cloud-eureka-server-7003</module>
         <module>cloud-provider-payment-8002</module>
         <module>zookeeper-practice-project</module>
+        <module>cloud-zk-provider-payment-8004</module>
+        <module>cloud-zk-consumer-order-80</module>
+        <module>cloud-consul-provider-payment-8006</module>
+        <module>cloud-consul-consumer-order-80</module>
     </modules>
 
 
