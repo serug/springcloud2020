@@ -15,4 +15,5 @@ public class ConsulOrderApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsulOrderApplication.class, args);
     }
+
 }
