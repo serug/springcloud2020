@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.serug.springcloud.payment.service.IPaymentService;
 import top.serug.payment.Payment;
 import top.serug.responseentity.CommonResponse;
+import top.serug.springcloud.payment.service.IPaymentService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description:
@@ -45,10 +46,26 @@ public class PaymentController {
 
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/get/{id}")
     public CommonResponse getPaymentById(@PathVariable("id") Long id){
         Payment bo = paymentService.getPaymentByPayId(id);
         return bo != null?new CommonResponse(200, "查询成功, 调用的服务为："+serverPort, true, bo):new CommonResponse(444, "查询对应记录为空", false, null);
+    }
+
+    @RequestMapping("/lb")
+    public String lb(){
+        return serverPort;
+    }
+
+    @RequestMapping("/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return serverPort;
     }
 }
 

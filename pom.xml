@@ -25,6 +25,7 @@
         <module>cloud-zk-consumer-order-80</module>
         <module>cloud-consul-provider-payment-8006</module>
         <module>cloud-consul-consumer-order-80</module>
+        <module>cloud-consumer-order-feign-80</module>
     </modules>
 
 

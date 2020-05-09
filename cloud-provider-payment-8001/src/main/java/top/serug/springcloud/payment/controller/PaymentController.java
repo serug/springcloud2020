@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description:
@@ -52,7 +53,7 @@ public class PaymentController {
 
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/get/{id}")
     public CommonResponse getPaymentById(@PathVariable("id") Long id){
         Payment bo = paymentService.getPaymentByPayId(id);
         return bo != null?new CommonResponse(200, "查询成功, 调用的服务为："+serverPort, true, bo):new CommonResponse(444, "查询对应记录为空", false, null);
@@ -72,5 +73,25 @@ public class PaymentController {
 
         return this.discoveryClient;
     }
+
+
+    @RequestMapping("/lb")
+    public String lb(){
+        return serverPort;
+    }
+
+
+    @RequestMapping("/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return serverPort;
+    }
+
+
 }
 
