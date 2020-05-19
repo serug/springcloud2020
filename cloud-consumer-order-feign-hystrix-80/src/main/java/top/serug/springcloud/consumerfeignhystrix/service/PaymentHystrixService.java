@@ -4,6 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import top.serug.springcloud.consumerfeignhystrix.service.hystrix.PaymentHystrixServiceImpl;
 
 /**
  * @Description:
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Date: 2020/5/18  21:23
  */
 @Component
-@FeignClient(value = "CLOUD-PAYMENT-SERVICE-HYSTRIX")
+@FeignClient(value = "CLOUD-PAYMENT-SERVICE-HYSTRIX", fallback = PaymentHystrixServiceImpl.class)
 public interface PaymentHystrixService {
 
     @RequestMapping("/payment/hystrix/ok/{id}")

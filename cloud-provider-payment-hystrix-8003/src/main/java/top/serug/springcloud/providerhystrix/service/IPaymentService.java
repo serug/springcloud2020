@@ -10,4 +10,6 @@ public interface IPaymentService {
     public String payment_ok(Integer id);
 
     public String payment_timeout(Integer id);
+
+    public String paymentCircuitBreaker(Integer id);
 }
