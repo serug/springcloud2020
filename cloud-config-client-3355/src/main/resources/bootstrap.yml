@@ -19,6 +19,15 @@ spring:
       name: spring-config-3355           # 配置文件名称
       profile: dev                # 读取后缀名称
 
+#暴露监控端点
+
+
 test:
   info: bootstrap
 
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

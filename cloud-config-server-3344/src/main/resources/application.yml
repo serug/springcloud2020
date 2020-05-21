@@ -17,8 +17,8 @@ spring:
         git:
           #使用https的方式，需要添加用户名密码，如果使用的第SSH的方式，就不需要。
           uri: https://github.com/serug/springcloud2020.git
-          username: ******
-          password: ******
+#          username: ******
+#          password: ******
           #配置search-paths,可以找仓库下的子目录
           search-paths: config-file/3355
       # 读取master分支下的
