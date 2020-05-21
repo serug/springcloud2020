@@ -30,6 +30,8 @@
         <module>cloud-consumer-order-feign-hystrix-80</module>
         <module>cloud-dashboard-hystrix-9001</module>
         <module>cloud-gateway-9527</module>
+        <module>cloud-config-server-3344</module>
+        <module>cloud-config-client-3355</module>
     </modules>
 
 
