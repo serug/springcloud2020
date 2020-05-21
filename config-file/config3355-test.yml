@@ -1,1 +1,2 @@
-this is 3355 config test, update num 0
+config:
+  info: test 0

@@ -1,1 +1,2 @@
-this is 3355 config product, update num 0
+config:
+  info: product 0
