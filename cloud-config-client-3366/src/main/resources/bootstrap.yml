@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 eureka:
   client:
@@ -18,13 +18,15 @@ spring:
 #      name: config3355            # 配置文件名称
       name: spring-config-3355           # 配置文件名称
       profile: dev                # 读取后缀名称
-
   # RabbitMQ相关配置：连接配置
   rabbitmq:
     host: 192.168.1.4
     port: 5672
     username: guest
     password: guest
+
+test:
+  info: bootstrap
 
 #暴露监控端点
 management:
