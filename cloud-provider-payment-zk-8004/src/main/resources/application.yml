@@ -7,9 +7,9 @@ spring:
   # DataSource
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://101.37.204.222/sc2020?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-    username: sc2020
-    password: 1qaz@WSX#EDC
+    url: jdbc:mysql://ip/DBname?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: username
+    password: passwordDC
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     zookeeper:
