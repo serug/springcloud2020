@@ -95,3 +95,101 @@ mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ##修改配置文件，使Nacos数据库修改为mysql
 
 只需要修改application.properties即可
+
+
+#nacos集群部署的各种小坑
+https://www.cnblogs.com/brightfang/p/12543860.html
+<br>
+ 首先，集群配置报错先查看日志文件nacos目录下的logs
+
+
+
+ 
+
+说几个新手经常遇到的玄学问题（我就是新手！嘿嘿）
+
+启动集群失败，发现nacos端口号不是./start.sh -p ****后面你配置的端口（集群启动端口号为 8848）
+
+比如这样
+
+
+
+ 
+
+ 端口是默认的8848，好嘛那就恭喜你，估计是被网上的半桶水教程坑了
+
+解决方法1：
+
+切换至nacos目录
+
+vim bin/start.sh
+
+首先这里看看有没有问题，用于指定启动的nacos端口号
+
+
+
+ 
+
+ 然后
+
+接收用的部分
+
+
+
+ 
+
+ 给他移到这里来
+
+不要放在nohup里面（就是文件末尾）我虽然不太懂shell，但是逻辑还是看得懂这个地方判断你的启动模式很明显else后面是集群模式带的参数
+
+ 
+
+ 
+
+ 
+
+ 
+
+注意：这个问题也麻烦（naming-raft日志中出现no leader is available now）
+
+
+
+集群内部是通过网卡地址通信，不是127.0.0.1这个回路地址，通过hostname -i取得本机ip
+
+
+
+丢这里ok。
+
+如果还是不行
+
+修改你的主机名和hosts
+
+hostname 主机名
+
+vi /etc/hosts
+
+末尾添加  主机名 你的内网ip（就是刚刚hostname -i出来那个）
+
+ 
+
+最大的坑！！！！
+
+ 
+
+nacos集群如果启动失败在start。out文件中出现
+
+error='Cannot allocate memory' (errno=12)
+或者
+
+error='Cannot commite memory' (errno=12)
+注意你的linux2G内存足够跑3个nacos
+
+出现这种问题就是start.sh文件中的集群启动是内存配置有问题
+
+ 
+
+
+
+ 
+
+ 调整-Xms -Xmx -Xmn这三个，内存小整的跟我一样就行
