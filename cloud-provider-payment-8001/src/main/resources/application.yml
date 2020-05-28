@@ -5,24 +5,24 @@ spring:
   application:
     name: cloud-payment-service
   # DataSource
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://ip/DBname?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-    username: username
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:mysql://ip/DBname?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+#    username: username
+#    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
   #zipkin
-  zipkin:
-    base-url: http://192.168.1.4:9411
-    sleuth:
-      sampler:
-        #采样率值介于0~1之间，1表示全部采集
-      probability: 1
+#  zipkin:
+#    base-url: http://192.168.1.4:9411
+#    sleuth:
+#      sampler:
+#        #采样率值介于0~1之间，1表示全部采集
+#      probability: 1
 
 
-mybatis:
-  mapper-locations: classpath:mapper/**/*Mapper.xml
-  type-aliases-package: top.serug.springcloud.entities
+#mybatis:
+#  mapper-locations: classpath:mapper/**/*Mapper.xml
+#  type-aliases-package: top.serug.springcloud.entities
 
 eureka:
   client:
@@ -32,7 +32,7 @@ eureka:
     fetch-registry: true
     service-url:
       # http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/ #,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
     instance-id: paymentServer8001
     prefer-id-address: false

@@ -21,4 +21,6 @@ public interface IPaymentFeignService {
     @RequestMapping("/payment/timeout")
     public String paymentFeignTimeout();
 
+    @RequestMapping("/payment/lb")
+    public String lb();
 }
