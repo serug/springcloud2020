@@ -12,11 +12,8 @@ import top.serug.springcloud.alibabanacos.serivce.PaymentFeignService;
  */
 @Component
 public class PaymentFeignFallbackServiceImpl implements PaymentFeignService {
-
     @Override
     public CommonResponse<Payment> paymentSQL(Long id) {
         return new CommonResponse(666, "Feign接口调用异常，服务降级返回============",false) ;
     }
-
-
 }

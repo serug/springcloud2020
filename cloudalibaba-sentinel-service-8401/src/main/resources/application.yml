@@ -16,6 +16,17 @@ spring:
         # 默认端口8719，假如被占用会自动从8719依次+1开始扫描，直到找到可用
         port: 8719
 
+      # Sentinel规则持久化配置
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.1.4:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
+
 management:
   endpoints:
     web:

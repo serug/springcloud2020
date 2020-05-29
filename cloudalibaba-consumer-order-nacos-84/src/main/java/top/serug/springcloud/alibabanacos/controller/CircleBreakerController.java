@@ -60,10 +60,8 @@ public class CircleBreakerController {
 
 
     //============feign sentinel
-
     @Resource
     private PaymentFeignService paymentFeignService;
-
 
     @RequestMapping("/consumer/paymentSQL/{id}")
     public CommonResponse<Payment> paymentSQL(@PathVariable("id") Long id){
