@@ -16,3 +16,6 @@
 1.nacos_cofig.sql：这个是nacos作为配置中心的时候，连接数据库做持久化是需要的数据库脚本，原脚本在nacos压缩包的conf文件夹里
 2.seata.sql：这个是seata-server端需要的操作数据库
 3.seata-account/seata-order/seata-storage：这三个是测试使用的三个业务数据库
+
+##工程中代码不能直接运行
+需要修改工程的连接地址，如mysql,zookeeper等ip
