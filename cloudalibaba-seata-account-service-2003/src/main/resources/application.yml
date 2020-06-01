@@ -1,0 +1,40 @@
+server:
+  port: 2003
+
+spring:
+  application:
+    name: seata-account-service
+  cloud:
+    alibaba:
+      seata:
+        #自定义事务组名称需要与seata-server中配置的对应
+        tx-service-group: zzh
+    nacos:
+      discovery:
+        server-addr: 192.168.1.4:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.1.4:8080
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.4/seata_account?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  type-aliases-package: top.serug.springcloud.entities
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+feign:
+  sentinel:
+    enabled: true

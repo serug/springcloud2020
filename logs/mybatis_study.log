@@ -16,7 +16,7 @@
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.Environment.logEnv(98) | Client environment:os.memory.free=227MB
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.Environment.logEnv(98) | Client environment:os.memory.max=3641MB
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.Environment.logEnv(98) | Client environment:os.memory.total=245MB
-[mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.ZooKeeper.<init>(1005) | Initiating client connection, connectString=101.37.204.222:2181 sessionTimeout=2000 watcher=top.serug.zookeeper.TestZookeeper$1@224aed64
+[mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.ZooKeeper.<init>(1005) | Initiating client connection, connectString=192.168.1.4:2181 sessionTimeout=2000 watcher=top.serug.zookeeper.TestZookeeper$1@224aed64
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.common.X509Util.<clinit>(77) | Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.ClientCnxnSocket.initProperties(239) | jute.maxbuffer value is 1048575 Bytes
 [mybatis_study][INFO] [2020-05-04 10:14:32] org.apache.zookeeper.ClientCnxn.initRequestTimeout(1703) | zookeeper.request.timeout value is 0. feature enabled=false

@@ -1,0 +1,60 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    alibaba:
+      seata:
+        #自定义事务组名称需要与seata-server中配置的对应
+        tx-service-group: zzh
+    nacos:
+      discovery:
+        server-addr: 192.168.1.4:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.1.4:8080
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.4/seata_order?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#seata:
+#  enabled: true # 1.0新特性，需要依赖seata-spring-boot-starter,默认为true
+#  tx-service-group: my_tx_group
+#  registry:
+#    type: nacos
+#    nacos:
+#      server-addr: 192.168.1.4:8848
+#  client:
+#    support:
+#      spring:
+#        datasource-autoproxy: false
+
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  type-aliases-package: top.serug.springcloud.entities
+
+#设置Feign客户端超时时间（OpenFeign默认支持Ribbon)
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后，从服务器读取到可用资源的所用的额时间
+  ConnectTimeout: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+feign:
+  sentinel:
+    enabled: true

@@ -26,7 +26,7 @@ public class DistributeClient {
         client.business();
     }
 
-    private String connectString = "101.37.204.222:2181";
+    private String connectString = "192.168.1.4:2181";
     private int sessionTimeout = 200000;
     private ZooKeeper zkClient;
 
