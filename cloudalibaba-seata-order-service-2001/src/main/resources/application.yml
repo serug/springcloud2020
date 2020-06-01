@@ -23,21 +23,6 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-#seata:
-#  enabled: true # 1.0新特性，需要依赖seata-spring-boot-starter,默认为true
-#  tx-service-group: my_tx_group
-#  registry:
-#    type: nacos
-#    nacos:
-#      server-addr: 192.168.1.4:8848
-#  client:
-#    support:
-#      spring:
-#        datasource-autoproxy: false
-
-
-
-
 mybatis:
   mapper-locations: classpath:mapper/**/*Mapper.xml
   type-aliases-package: top.serug.springcloud.entities
